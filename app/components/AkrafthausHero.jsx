@@ -242,14 +242,15 @@ function Hero() {
       style={{
         position: "relative",
         width: "100%",
-        minHeight: "580px",
+        height: "88vh",
+        minHeight: "620px",
         overflow: "hidden",
-        background: "var(--charcoal)",
+        background: "var(--cream)",
         display: "flex",
-        alignItems: "flex-end",
-        paddingBottom: "120px",
+        alignItems: "center",
       }}
     >
+      {/* Full-bleed background image */}
       <img
         src="/hero.jpg"
         alt=""
@@ -259,11 +260,20 @@ function Hero() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          objectPosition: "center 30%",
+          objectPosition: "center center",
           display: "block",
         }}
       />
-      <div style={{ position: "absolute", inset: 0, background: "rgba(16,12,8,0.38)", zIndex: 1 }} />
+
+      {/* Left-side gradient so text is readable — fades from cream on left to transparent on right */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to right, rgba(245,240,232,0.92) 0%, rgba(245,240,232,0.75) 35%, rgba(245,240,232,0.15) 60%, transparent 100%)",
+        zIndex: 1,
+      }} />
+
+      {/* Content — left-aligned, dark text */}
       <div
         style={{
           position: "relative",
@@ -271,37 +281,21 @@ function Hero() {
           paddingLeft: "72px",
           paddingRight: "56px",
           width: "100%",
-          maxWidth: "680px",
+          maxWidth: "600px",
         }}
       >
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          style={{
-            fontSize: "10px",
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "var(--warm-gold)",
-            marginBottom: "20px",
-            fontWeight: 400,
-          }}
-        >
-          Excellence in Living
-        </motion.p>
-
         <motion.h1
           className="serif"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontSize: "clamp(44px, 5.5vw, 76px)",
-            lineHeight: 1.08,
+            fontSize: "clamp(48px, 5.5vw, 82px)",
+            lineHeight: 1.06,
             fontWeight: 500,
-            color: "var(--cream)",
-            marginBottom: "22px",
-            letterSpacing: "-0.01em",
+            color: "var(--charcoal)",
+            marginBottom: "24px",
+            letterSpacing: "-0.02em",
           }}
         >
           Where Luxury Meets<br />Creativity
@@ -310,12 +304,12 @@ function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
+          transition={{ duration: 0.8, delay: 0.38 }}
           style={{
             fontSize: "15px",
             lineHeight: 1.78,
-            color: "rgba(245,240,232,0.88)",
-            maxWidth: "460px",
+            color: "rgba(28,26,23,0.65)",
+            maxWidth: "420px",
             marginBottom: "40px",
             fontWeight: 300,
           }}
@@ -327,16 +321,33 @@ function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
           style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}
         >
-          <a href="#about" className="btn-gold">Explore Akrafthaus</a>
           <a
-            href="#gallery"
-            className="btn-outline"
-            style={{ borderColor: "rgba(245,240,232,0.38)", color: "rgba(245,240,232,0.92)" }}
+            href="#about"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              padding: "14px 28px",
+              background: "var(--warm-brown)",
+              color: "#fff",
+              fontSize: "11px",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              fontWeight: 500,
+              transition: "opacity 0.25s",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
           >
-            View Gallery
+            Explore Akrafthaus
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
           </a>
         </motion.div>
       </div>
@@ -845,7 +856,7 @@ function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(139,107,71,0.12)", paddingTop: "24px", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <span style={{ fontSize: "11.5px", color: "var(--text-muted)" }}>© 2025 Akrafthaus. All rights reserved.</span>
+          <span style={{ fontSize: "11.5px", color: "var(--text-muted)" }}>© 2026 Akrafthaus. All rights reserved.</span>
         </div>
       </div>
     </footer>
