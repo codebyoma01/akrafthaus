@@ -2,6 +2,27 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+
+// ...
+
+<ul className="nav-links-list">
+  {NAV_LINKS.map(l => (
+    <li key={l}>
+      <Link
+        href={l === "Apartments" ? "/apartments" : "#"}
+        onClick={() => setActiveLink(l)}
+        style={{
+          color: activeLink === l ? "var(--charcoal)" : "var(--text-muted)",
+          fontSize: "13px", fontWeight: activeLink === l ? 500 : 400,
+          letterSpacing: "0.02em", textDecoration: "none", paddingBottom: "4px",
+          borderBottom: activeLink === l ? "1.5px solid var(--warm-gold)" : "1.5px solid transparent",
+          transition: "color 0.2s, border-color 0.2s",
+        }}
+      >{l}</Link>
+    </li>
+  ))}
+</ul>
 
 const FontLoader = () => (
   <style>{`
@@ -246,22 +267,22 @@ function Navbar() {
         </div>
 
         <ul className="nav-links-list">
-          {NAV_LINKS.map(l => (
-            <li key={l}>
-              <a
-                href="#"
-                onClick={e => { e.preventDefault(); setActiveLink(l); }}
-                style={{
-                  color: activeLink === l ? "var(--charcoal)" : "var(--text-muted)",
-                  fontSize: "13px", fontWeight: activeLink === l ? 500 : 400,
-                  letterSpacing: "0.02em", textDecoration: "none", paddingBottom: "4px",
-                  borderBottom: activeLink === l ? "1.5px solid var(--warm-gold)" : "1.5px solid transparent",
-                  transition: "color 0.2s, border-color 0.2s",
-                }}
-              >{l}</a>
-            </li>
-          ))}
-        </ul>
+  {NAV_LINKS.map(l => (
+    <li key={l}>
+      <Link
+        href={l === "Apartments" ? "/apartments" : "#"}
+        onClick={() => setActiveLink(l)}
+        style={{
+          color: activeLink === l ? "var(--charcoal)" : "var(--text-muted)",
+          fontSize: "13px", fontWeight: activeLink === l ? 500 : 400,
+          letterSpacing: "0.02em", textDecoration: "none", paddingBottom: "4px",
+          borderBottom: activeLink === l ? "1.5px solid var(--warm-gold)" : "1.5px solid transparent",
+          transition: "color 0.2s, border-color 0.2s",
+        }}
+      >{l}</Link>
+    </li>
+  ))}
+</ul>
 
         <a
           href="#contact"
