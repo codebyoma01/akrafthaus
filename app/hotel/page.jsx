@@ -11,22 +11,13 @@ const FontLoader = () => (
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:      #F5F0E8;
-      --charcoal:   #1C1A17;
-      --warm-gold:  #C9A96E;
-      --warm-brown: #8B6B47;
-      --sand:       #F0EAE0;
-      --text-muted: #7A6E64;
+      --cream: #F5F0E8; --charcoal: #1C1A17; --warm-gold: #C9A96E;
+      --warm-brown: #8B6B47; --sand: #F0EAE0; --text-muted: #7A6E64;
     }
 
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--sand); color: var(--charcoal);
-      font-family: 'DM Sans', sans-serif;
-      -webkit-font-smoothing: antialiased; overflow-x: hidden;
-    }
+    body { background: var(--sand); color: var(--charcoal); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
-
     .eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-brown); font-weight: 400; }
 
     .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--warm-brown); color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: opacity 0.25s; white-space: nowrap; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
@@ -34,33 +25,14 @@ const FontLoader = () => (
     .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border: 1px solid var(--warm-brown); color: var(--warm-brown); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: none; transition: background 0.25s, color 0.25s; white-space: nowrap; cursor: pointer; font-family: 'DM Sans', sans-serif; }
     .btn-outline:hover { background: var(--warm-brown); color: var(--cream); }
 
-    /* NAVBAR */
-    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 68px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: transparent; transition: background 0.35s ease, height 0.3s ease; }
-    .navbar.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 0 rgba(139,107,71,0.12); height: 60px; backdrop-filter: blur(12px); }
-    .navbar.menu-open { background: rgba(255,255,255,0.99); }
-    .nav-links-list { display: flex; gap: 24px; list-style: none; align-items: center; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--charcoal); transition: all 0.3s ease; transform-origin: center; }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .mobile-menu { position: fixed; top: 0; left: 0; right: 0; z-index: 199; background: #fff; padding: 84px 24px 40px; display: flex; flex-direction: column; box-shadow: 0 8px 32px rgba(0,0,0,0.08); max-height: 100dvh; overflow-y: auto; }
-    .mobile-menu a { display: block; padding: 15px 0; font-size: 16px; color: var(--charcoal); text-decoration: none; border-bottom: 1px solid rgba(139,107,71,0.1); transition: color 0.2s; }
-    .mobile-menu a:hover { color: var(--warm-brown); }
-    .mobile-cta { margin-top: 24px; border-bottom: none !important; display: flex !important; align-items: center; justify-content: center; gap: 10px; padding: 15px 32px !important; background: var(--warm-brown); color: #fff !important; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; border-radius: 4px; }
-
-    /* ROOM CARD */
     .room-card { background: #fff; overflow: hidden; border: 1px solid rgba(139,107,71,0.08); transition: box-shadow 0.3s ease, transform 0.3s ease; }
     .room-card:hover { box-shadow: 0 12px 40px rgba(139,107,71,0.12); transform: translateY(-4px); }
     .room-card-img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.7s ease; }
     .room-card:hover .room-card-img { transform: scale(1.04); }
 
-    /* AMENITY */
     .amenity-item { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 24px 12px; background: var(--cream); border: 1px solid rgba(139,107,71,0.08); transition: all 0.25s; text-align: center; }
     .amenity-item:hover { background: #fff; border-color: rgba(139,107,71,0.2); transform: translateY(-3px); }
 
-    /* FORM */
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
     .form-input { padding: 12px 14px; border: 1px solid rgba(139,107,71,0.2); background: #fff; font-size: 13px; color: var(--charcoal); font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; border-radius: 2px; width: 100%; }
@@ -68,87 +40,93 @@ const FontLoader = () => (
     .form-select { padding: 12px 14px; border: 1px solid rgba(139,107,71,0.2); background: #fff; font-size: 13px; color: var(--charcoal); font-family: 'DM Sans', sans-serif; outline: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B6B47' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; transition: border-color 0.2s; border-radius: 2px; width: 100%; }
     .form-select:focus { border-color: var(--warm-brown); }
 
-    /* GALLERY */
     .gal-item { overflow: hidden; cursor: pointer; border-radius: 4px; }
     .gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
     .gal-item:hover img { transform: scale(1.06); }
-
-    /* WHATSAPP */
-    .whatsapp-btn { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s ease; }
-    .whatsapp-btn:hover { transform: scale(1.1); }
-    .whatsapp-pulse { position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: waPulse 2s ease-out infinite; }
-    @keyframes waPulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.7); opacity: 0; } }
 
     .footer-link { color: var(--text-muted); font-size: 12.5px; text-decoration: none; line-height: 2; display: block; transition: color 0.2s; }
     .footer-link:hover { color: var(--warm-brown); }
     .social-icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(139,107,71,0.25); display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-decoration: none; transition: all 0.2s; flex-shrink: 0; }
     .social-icon-btn:hover { border-color: var(--warm-brown); color: var(--warm-brown); }
 
-    /* ════════════════════════════════════
-       RESPONSIVE
-    ════════════════════════════════════ */
+    .whatsapp-btn { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s ease; }
+    .whatsapp-btn:hover { transform: scale(1.1); }
+    .whatsapp-pulse { position: absolute; inset: 0; border-radius: 50%; background: #25D366; animation: waPulse 2s ease-out infinite; }
+    @keyframes waPulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.7); opacity: 0; } }
+
+    /* ══════════════════════════════
+       GALLERY GRID
+    ══════════════════════════════ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 10px;
+    }
+    .gallery-grid .gal-item-featured {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery-grid .gal-item img {
+      height: 100%;
+    }
+
     @media (max-width: 1024px) {
       .rooms-grid { grid-template-columns: 1fr 1fr !important; }
       .amenities-grid { grid-template-columns: repeat(4, 1fr) !important; }
       .booking-grid-3 { grid-template-columns: 1fr 1fr !important; }
     }
-
     @media (max-width: 768px) {
-      /* Navbar */
-      .navbar { padding: 0 20px; height: 60px; }
-      .nav-links-list { display: none !important; }
-      .nav-book-btn { display: none !important; }
-      .hamburger { display: flex !important; }
-
-      /* Hero */
       .hotel-hero { min-height: 100svh !important; }
       .hotel-hero-content { padding: 0 24px !important; max-width: 100% !important; }
       .hotel-hero-content h1 { font-size: clamp(36px, 10vw, 60px) !important; }
-      .hotel-hero-content p { font-size: 14px !important; }
-      .hero-stats-row { gap: 20px !important; padding-top: 24px !important; margin-top: 36px !important; flex-wrap: wrap !important; }
-      .hero-cta-row { flex-direction: column !important; }
-      .hero-cta-row a { width: 100% !important; justify-content: center !important; }
-
-      /* Sections */
       .hotel-section { padding: 52px 20px !important; }
-
-      /* Rooms — single column */
       .rooms-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
       .room-card-img { height: 220px !important; }
       .room-features-grid { grid-template-columns: 1fr 1fr !important; }
       .room-cta-row { flex-direction: column !important; gap: 10px !important; }
       .room-cta-row a, .room-cta-row button { flex: none !important; width: 100% !important; justify-content: center !important; }
-
-      /* Amenities */
       .amenities-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-
-      /* Booking form */
       .booking-grid-3 { grid-template-columns: 1fr !important; gap: 14px !important; }
       .booking-form-box { padding: 28px 20px !important; }
       .booking-submit-row { flex-direction: column !important; align-items: stretch !important; }
       .booking-submit-row button { width: 100% !important; justify-content: center !important; }
       .booking-contact-row { flex-direction: column !important; gap: 12px !important; }
 
-      /* Gallery */
-      .gallery-grid { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
-      .gallery-grid > div:first-child { grid-column: span 1 !important; grid-row: span 1 !important; }
-      .gallery-grid img { height: 160px !important; }
+      /* Gallery — remove fixed row heights, stack naturally */
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+      }
+      .gallery-grid .gal-item-featured {
+        grid-column: span 2 !important;
+        grid-row: span 1 !important;
+      }
+      .gallery-grid .gal-item img,
+      .gallery-grid .gal-item-featured img {
+        height: 180px !important;
+      }
 
-      /* Footer */
       .footer-wrap { padding: 48px 20px 24px !important; }
       .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
       .footer-brand-col { grid-column: 1 / -1 !important; }
-
-      /* CTA banner */
       .hotel-cta-banner h2 { font-size: clamp(28px, 8vw, 48px) !important; }
+      .hero-cta-row { flex-direction: column !important; }
+      .hero-cta-row a { width: 100% !important; justify-content: center !important; }
     }
-
     @media (max-width: 480px) {
       .amenities-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .gallery-grid { grid-template-columns: 1fr !important; }
-      .gallery-grid img { height: 200px !important; }
+      .gallery-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .gallery-grid .gal-item-featured {
+        grid-column: span 1 !important;
+      }
+      .gallery-grid .gal-item img,
+      .gallery-grid .gal-item-featured img {
+        height: 200px !important;
+      }
       .footer-grid { grid-template-columns: 1fr !important; }
-      .rooms-grid { grid-template-columns: 1fr !important; }
     }
   `}</style>
 );
@@ -164,107 +142,41 @@ const useInView = (threshold = 0.1) => {
   return [ref, visible];
 };
 
-const NAV_LINKS = ["Apartments", "Hotel", "Creative Studio", "Restaurant", "Tech Hub", "Language School", "Gallery"];
-
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [menuOpen]);
-
-  return (
-    <>
-      <motion.nav
-        className={["navbar", scrolled ? "scrolled" : "", menuOpen ? "menu-open" : ""].filter(Boolean).join(" ")}
-        initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <Link href="/" style={{ flexShrink: 0 }}>
-          <img src="/logo.png" alt="AKRAFTHAUS" style={{ height: "38px", width: "auto", objectFit: "contain" }} />
-        </Link>
-        <ul className="nav-links-list">
-          {NAV_LINKS.map(l => (
-            <li key={l}>
-              <Link href={l === "Apartments" ? "/apartments" : l === "Hotel" ? "/hotel" : l === "Language School" ? "/#language-school" : "#"}
-                style={{ color: l === "Hotel" ? "var(--charcoal)" : "var(--text-muted)", fontSize: "13px", fontWeight: l === "Hotel" ? 500 : 400, letterSpacing: "0.02em", textDecoration: "none", paddingBottom: "4px", borderBottom: l === "Hotel" ? "1.5px solid var(--warm-gold)" : "1.5px solid transparent", transition: "color 0.2s" }}>
-                {l}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <a href="#booking" className="nav-book-btn"
-          style={{ flexShrink: 0, padding: "10px 22px", background: "var(--warm-brown)", color: "#fff", fontSize: "12px", letterSpacing: "0.06em", textDecoration: "none", fontWeight: 500, borderRadius: "6px" }}>
-          Book Now
-        </a>
-        <button className={"hamburger" + (menuOpen ? " open" : "")} onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
-      </motion.nav>
-
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div className="mobile-menu"
-            initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.26 }}>
-            {NAV_LINKS.map(l => <a key={l} href={l === "Hotel" ? "/hotel" : "#"} onClick={() => setMenuOpen(false)}>{l}</a>)}
-            <a href="#booking" className="mobile-cta" onClick={() => setMenuOpen(false)}>
-              Book Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
-
+/* ─────────────────────────────────────────────
+   HERO
+───────────────────────────────────────────── */
 function HotelHero() {
   return (
     <section className="hotel-hero" style={{ position: "relative", width: "100%", minHeight: "100vh", overflow: "hidden" }}>
       <img src="/hotel-hero.jpg" alt="Akrafthaus Boutique Hotel" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,10,5,0.78) 0%, rgba(15,10,5,0.4) 60%, rgba(15,10,5,0.15) 100%)" }} />
-
-      <div className="hotel-hero-content" style={{ position: "relative", zIndex: 2, height: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 72px", maxWidth: "760px", paddingTop: "68px" }}>
+      <div className="hotel-hero-content" style={{ position: "relative", zIndex: 2, height: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 72px", maxWidth: "760px", paddingTop: "72px" }}>
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
           style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "22px" }}>
           <span style={{ width: "26px", height: "1px", background: "var(--warm-gold)" }} />
           <span style={{ fontSize: "10px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--warm-gold)" }}>Boutique Hotel · Kubwa, Abuja</span>
         </motion.div>
-
         <motion.h1 className="serif" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           style={{ fontSize: "clamp(40px, 7vw, 88px)", lineHeight: 1.05, fontWeight: 500, color: "var(--cream)", marginBottom: "20px", letterSpacing: "-0.02em" }}>
           Rest in<br />Refined<br />Luxury
         </motion.h1>
-
         <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.38 }}
           style={{ fontSize: "15px", lineHeight: 1.78, color: "rgba(245,240,232,0.72)", maxWidth: "420px", marginBottom: "40px", fontWeight: 300 }}>
           42 uniquely designed rooms and suites, each crafted to deliver an experience that blends warmth, elegance, and genuine Nigerian hospitality.
         </motion.p>
-
         <motion.div className="hero-cta-row" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
           style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="#booking"
-            style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", background: "var(--warm-brown)", color: "#fff", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "opacity 0.25s" }}
+          <a href="#booking" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", background: "var(--warm-brown)", color: "#fff", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "opacity 0.25s" }}
             onMouseEnter={e => (e.currentTarget.style.opacity = "0.82")} onMouseLeave={e => (e.currentTarget.style.opacity = "1")}>
             Reserve a Room
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#rooms"
-            style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", border: "1px solid rgba(245,240,232,0.4)", color: "rgba(245,240,232,0.88)", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500 }}
+          <a href="#rooms" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", border: "1px solid rgba(245,240,232,0.4)", color: "rgba(245,240,232,0.88)", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500 }}
             onMouseEnter={e => (e.currentTarget.style.background = "rgba(245,240,232,0.1)")} onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
             View Rooms
           </a>
         </motion.div>
-
-        <motion.div className="hero-stats-row" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.75 }}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.75 }}
           style={{ display: "flex", gap: "36px", marginTop: "52px", paddingTop: "32px", borderTop: "1px solid rgba(245,240,232,0.15)", flexWrap: "wrap" }}>
           {[["42", "Unique Rooms"], ["5★", "Rated Hotel"], ["24/7", "Concierge"], ["₦50k", "From / Night"]].map(([num, label]) => (
             <div key={label}>
@@ -274,7 +186,6 @@ function HotelHero() {
           ))}
         </motion.div>
       </div>
-
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
         style={{ position: "absolute", bottom: "40px", left: "72px", zIndex: 3, display: "flex", alignItems: "center", gap: "10px" }}>
         <div style={{ width: "1px", height: "44px", background: "rgba(245,240,232,0.2)", position: "relative", overflow: "hidden" }}>
@@ -287,6 +198,9 @@ function HotelHero() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   ROOMS
+───────────────────────────────────────────── */
 const ROOMS = [
   { type: "Standard Room", price: "₦50,000", size: "28 sqm", guests: "2 Guests", img: "/room-standard.jpg", features: ["King Bed", "City View", "Free WiFi", "Air Conditioning", "Smart TV", "En-suite Bathroom"], badge: null },
   { type: "Deluxe Room", price: "₦70,000", size: "36 sqm", guests: "2 Guests", img: "/room-deluxe.jpg", features: ["King Bed", "Garden View", "Free WiFi", "Mini Bar", "Smart TV", "Rain Shower"], badge: "Most Popular" },
@@ -302,16 +216,13 @@ function Rooms() {
         <motion.div initial={{ opacity: 0, y: 18 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} style={{ marginBottom: "48px" }}>
           <p className="eyebrow" style={{ marginBottom: "14px" }}>Accommodation</p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "16px" }}>
-            <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 48px)", lineHeight: 1.1, fontWeight: 500, color: "var(--charcoal)" }}>Our Rooms &amp; Suites</h2>
+            <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 48px)", lineHeight: 1.1, fontWeight: 500, color: "var(--charcoal)" }}>Our Rooms & Suites</h2>
             <p style={{ fontSize: "14px", lineHeight: 1.75, color: "var(--text-muted)", maxWidth: "340px" }}>Every room is a carefully considered sanctuary blending local craft, premium comfort, and timeless design.</p>
           </div>
         </motion.div>
-
         <div className="rooms-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
           {ROOMS.map(({ type, price, size, guests, img, features, badge }, i) => (
-            <motion.div key={type} className="room-card"
-              initial={{ opacity: 0, y: 24 }} animate={visible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.1 }}>
+            <motion.div key={type} className="room-card" initial={{ opacity: 0, y: 24 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: i * 0.1 }}>
               <div style={{ position: "relative", overflow: "hidden" }}>
                 <img src={img} alt={type} className="room-card-img" />
                 {badge && <div style={{ position: "absolute", top: "14px", left: "14px", background: "var(--warm-brown)", color: "#fff", fontSize: "9px", letterSpacing: "0.16em", textTransform: "uppercase", padding: "5px 12px" }}>{badge}</div>}
@@ -321,12 +232,10 @@ function Rooms() {
                 </div>
               </div>
               <div style={{ padding: "24px" }}>
-                <div style={{ marginBottom: "14px" }}>
-                  <h3 className="serif" style={{ fontSize: "19px", fontWeight: 500, color: "var(--charcoal)", marginBottom: "6px" }}>{type}</h3>
-                  <div style={{ display: "flex", gap: "14px" }}>
-                    <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>📐 {size}</span>
-                    <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>👤 {guests}</span>
-                  </div>
+                <h3 className="serif" style={{ fontSize: "19px", fontWeight: 500, color: "var(--charcoal)", marginBottom: "6px" }}>{type}</h3>
+                <div style={{ display: "flex", gap: "14px", marginBottom: "14px" }}>
+                  <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>📐 {size}</span>
+                  <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>👤 {guests}</span>
                 </div>
                 <div className="room-features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "7px", marginBottom: "20px" }}>
                   {features.map(f => (
@@ -349,6 +258,9 @@ function Rooms() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   AMENITIES
+───────────────────────────────────────────── */
 const AMENITIES = [
   { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11V7a5 5 0 0 1 10 0v4"/><path d="M3 11h18v4a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6v-4z"/></svg>, label: "Swimming Pool" },
   { icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>, label: "Fine Dining" },
@@ -372,9 +284,7 @@ function Amenities() {
         </motion.div>
         <div className="amenities-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "14px" }}>
           {AMENITIES.map(({ icon, label }, i) => (
-            <motion.div key={label} className="amenity-item"
-              initial={{ opacity: 0, y: 18 }} animate={visible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.07 }}>
+            <motion.div key={label} className="amenity-item" initial={{ opacity: 0, y: 18 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.07 }}>
               <div style={{ color: "var(--warm-brown)", lineHeight: 0 }}>{icon}</div>
               <span style={{ fontSize: "12px", fontWeight: 500, color: "var(--charcoal)" }}>{label}</span>
             </motion.div>
@@ -385,6 +295,9 @@ function Amenities() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   BOOKING FORM
+───────────────────────────────────────────── */
 function BookingForm() {
   const [ref, visible] = useInView(0.1);
   const [formData, setFormData] = useState({ checkIn: "", checkOut: "", roomType: "", guests: "1", name: "", email: "", phone: "", requests: "" });
@@ -399,7 +312,6 @@ function BookingForm() {
           <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 44px)", fontWeight: 500, color: "var(--charcoal)", marginBottom: "12px" }}>Reserve Your Room</h2>
           <p style={{ fontSize: "14px", color: "var(--text-muted)", maxWidth: "380px", margin: "0 auto", lineHeight: 1.8 }}>Fill in the form and our team will confirm within 2 hours.</p>
         </motion.div>
-
         <motion.div className="booking-form-box" initial={{ opacity: 0, y: 20 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.15 }}
           style={{ background: "#fff", padding: "44px", border: "1px solid rgba(139,107,71,0.1)" }}>
           <AnimatePresence mode="wait">
@@ -455,7 +367,6 @@ function BookingForm() {
             )}
           </AnimatePresence>
         </motion.div>
-
         <motion.div className="booking-contact-row" initial={{ opacity: 0, y: 10 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }}
           style={{ display: "flex", justifyContent: "center", gap: "36px", marginTop: "28px", flexWrap: "wrap" }}>
           {[{ icon: "📞", text: "+234 703 386 9555" }, { icon: "✉️", text: "hello@akrafthaus.ng" }, { icon: "💬", text: "WhatsApp Us" }].map(({ icon, text }) => (
@@ -470,11 +381,16 @@ function BookingForm() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   GALLERY
+───────────────────────────────────────────── */
 const GALLERY = [
-  { src: "/hotel-gallery1.jpg", style: { gridColumn: "span 2", gridRow: "span 2" } },
-  { src: "/hotel-gallery2.jpg", style: {} }, { src: "/hotel-gallery3.jpg", style: {} },
-  { src: "/hotel-gallery4.jpg", style: {} }, { src: "/hotel-gallery5.jpg", style: {} },
-  { src: "/hotel-gallery6.jpg", style: {} },
+  { src: "/hotel-gallery1.jpg", featured: true },
+  { src: "/hotel-gallery2.jpg", featured: false },
+  { src: "/hotel-gallery3.jpg", featured: false },
+  { src: "/hotel-gallery4.jpg", featured: false },
+  { src: "/hotel-gallery5.jpg", featured: false },
+  { src: "/hotel-gallery6.jpg", featured: false },
 ];
 
 function HotelGallery() {
@@ -487,9 +403,9 @@ function HotelGallery() {
           <p className="eyebrow" style={{ marginBottom: "14px", color: "rgba(201,169,110,0.8)" }}>Photo Gallery</p>
           <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 44px)", fontWeight: 500, color: "var(--cream)" }}>See the Space</h2>
         </motion.div>
-        <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridTemplateRows: "repeat(2, 200px)", gap: "10px" }}>
-          {GALLERY.map(({ src, style }, i) => (
-            <motion.div key={i} className="gal-item" style={{ ...style }} onClick={() => setLightbox(src)}
+        <div className="gallery-grid">
+          {GALLERY.map(({ src, featured }, i) => (
+            <motion.div key={i} className={`gal-item${featured ? " gal-item-featured" : ""}`} onClick={() => setLightbox(src)}
               initial={{ opacity: 0, scale: 0.96 }} animate={visible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.7, delay: i * 0.08 }}>
               <img src={src} alt={`Gallery ${i + 1}`} />
@@ -511,6 +427,9 @@ function HotelGallery() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   CTA BANNER
+───────────────────────────────────────────── */
 function CTABanner() {
   const [ref, visible] = useInView();
   return (
@@ -528,6 +447,9 @@ function CTABanner() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
 function Footer() {
   return (
     <footer className="footer-wrap" style={{ background: "var(--cream)", padding: "56px 64px 24px", borderTop: "1px solid rgba(139,107,71,0.12)" }}>
@@ -538,23 +460,24 @@ function Footer() {
             <p style={{ fontSize: "12.5px", lineHeight: 1.75, color: "var(--text-muted)", maxWidth: "200px" }}>A luxury lifestyle destination where hospitality, creativity, and innovation come together.</p>
           </div>
           {[
-            { heading: "Explore", links: ["Apartments","Hotel","Restaurant","Creative Studio","Tech Hub","Language School","Gallery"] },
-            { heading: "Company", links: ["About Us","Careers","Press","Blog","Contact"] },
-            { heading: "Support", links: ["FAQs","Privacy Policy","Terms & Conditions","Booking Policy"] },
+            { heading: "Explore", links: [["Apartments", "/apartments"], ["Hotel", "/hotel"], ["Restaurant", "/restaurant"], ["Creative Studio", "/creative-studio"], ["Tech Hub", "/tech-hub"], ["Language School", "/language-school"], ["Gallery", "/gallery"]] },
+            { heading: "Company", links: [["About Us", "#"], ["Careers", "#"], ["Press", "#"], ["Blog", "#"], ["Contact", "#"]] },
+            { heading: "Support", links: [["FAQs", "#"], ["Privacy Policy", "#"], ["Terms & Conditions", "#"], ["Booking Policy", "#"]] },
           ].map(({ heading, links }) => (
             <div key={heading}>
               <div style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.06em", color: "var(--charcoal)", marginBottom: "16px" }}>{heading}</div>
-              {links.map(l => <a key={l} href="#" className="footer-link">{l}</a>)}
+              {links.map(([l, href]) => <Link key={l} href={href} className="footer-link">{l}</Link>)}
             </div>
           ))}
           <div>
             <div style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.06em", color: "var(--charcoal)", marginBottom: "16px" }}>Connect</div>
             <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
-              {[["Instagram", <><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></>], ["WhatsApp", <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>]].map(([lbl, d]) => (
-                <a key={lbl} href="#" className="social-icon-btn" aria-label={lbl}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{d}</svg>
-                </a>
-              ))}
+              <a href="#" className="social-icon-btn" aria-label="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://wa.me/2347033869555" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {["+234 703 386 9555", "hello@akrafthaus.ng", "Kubwa, Abuja, Nigeria"].map(t => (
@@ -575,7 +498,6 @@ export default function HotelPage() {
   return (
     <>
       <FontLoader />
-      <Navbar />
       <HotelHero />
       <Rooms />
       <Amenities />
