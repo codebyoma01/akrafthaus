@@ -114,51 +114,16 @@ const FontLoader = () => (
     }
 
     /* ══════════════════════════════
-       HERO — mobile overrides
-    ══════════════════════════════ */
-    .hero-content {
-      position: relative; z-index: 2; height: 100%;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 0 72px; max-width: 720px;
-    }
-    .hero-dots { position: absolute; bottom: 36px; left: 72px; display: flex; gap: 8px; z-index: 3; }
-    .hero-label { position: absolute; bottom: 36px; right: 48px; z-index: 3; display: flex; align-items: center; gap: 10px; }
-
-    /* ══════════════════════════════
-       FEATURE STRIP — mobile overrides
-    ══════════════════════════════ */
-    .feature-strip-wrapper { background: var(--sand); }
-    .feature-strip {
-      margin: -36px 80px 0;
-      background: rgba(240,234,224,0.92);
-      border: 1px solid rgba(139,107,71,0.07);
-      border-radius: 6px; padding: 20px 24px;
-      display: grid; grid-template-columns: repeat(7, 1fr);
-      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-      backdropFilter: blur(10px);
-      position: relative; z-index: 10;
-    }
-
-    /* ══════════════════════════════
        RESPONSIVE
     ══════════════════════════════ */
     @media (max-width: 768px) {
       .hero-section { min-height: 100svh !important; }
-
-      .hero-content {
-        padding: 0 24px !important;
-        max-width: 100% !important;
-      }
-      .hero-dots { left: 24px !important; bottom: 24px !important; }
-      .hero-label { display: none !important; }
-
       .feature-strip {
-        margin: -20px 12px 0 !important;
+        margin: 0 12px !important; margin-top: -20px !important;
         grid-template-columns: repeat(3, 1fr) !important;
       }
       .feature-strip > div:nth-child(n+4) { border-top: 1px solid rgba(139,107,71,0.07); }
       .feature-strip > div:nth-child(3n) { border-right: none !important; }
-
       .two-col { grid-template-columns: 1fr !important; gap: 36px !important; }
       .two-col-reverse { grid-template-columns: 1fr !important; gap: 36px !important; }
       .two-col-reverse > *:first-child { order: 2; }
@@ -177,7 +142,6 @@ const FontLoader = () => (
     }
 
     @media (max-width: 480px) {
-      .hero-content { padding: 0 20px !important; }
       .feature-strip { grid-template-columns: repeat(2, 1fr) !important; }
       .feature-strip > div:nth-child(2n) { border-right: none !important; }
       .feature-strip > div:nth-child(n+3) { border-top: 1px solid rgba(139,107,71,0.07); }
@@ -219,7 +183,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="hero-section" style={{ position: "relative", width: "100%", height: "100vh", minHeight: "600px", overflow: "hidden", paddingTop: "72px" }}>
+    <section style={{ position: "relative", width: "100%", height: "100vh", minHeight: "600px", overflow: "hidden", paddingTop: "72px" }}>
       {HERO_SLIDES.map((src, i) => (
         <img key={src} src={src} alt=""
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: i === currentSlide ? 1 : 0, transition: "opacity 1.4s ease-in-out", zIndex: 0 }}
@@ -227,11 +191,11 @@ function Hero() {
       ))}
       <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(to right, rgba(15,10,5,0.72) 0%, rgba(15,10,5,0.45) 55%, rgba(15,10,5,0.2) 100%)" }} />
 
-      <div className="hero-content">
+      <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 72px", maxWidth: "720px" }}>
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
           style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}>
           <span style={{ width: "28px", height: "1px", background: "var(--warm-gold)" }} />
-          <span style={{ fontSize: "10px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--warm-gold)", fontWeight: 400 }}>Kubwa, Abuja · Nigeria</span>
+          <span style={{ fontSize: "10px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--warm-gold)", fontWeight: 400 }}>Abuja, Nigeria</span>
         </motion.div>
 
         <motion.h1 className="serif" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -268,7 +232,7 @@ function Hero() {
         </motion.div>
       </div>
 
-      <div className="hero-dots">
+      <div style={{ position: "absolute", bottom: "36px", left: "72px", display: "flex", gap: "8px", zIndex: 3 }}>
         {HERO_SLIDES.map((_, i) => (
           <button key={i} onClick={() => setCurrentSlide(i)}
             style={{ width: i === currentSlide ? "28px" : "8px", height: "8px", borderRadius: "4px", border: "none", cursor: "pointer", padding: 0, background: i === currentSlide ? "var(--warm-gold)" : "rgba(245,240,232,0.35)", transition: "all 0.35s ease" }}
@@ -276,7 +240,7 @@ function Hero() {
         ))}
       </div>
 
-      <div className="hero-label">
+      <div style={{ position: "absolute", bottom: "36px", right: "48px", zIndex: 3, display: "flex", alignItems: "center", gap: "10px" }}>
         <span style={{ width: "20px", height: "1px", background: "rgba(245,240,232,0.4)" }} />
         <span style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(245,240,232,0.5)" }}>
           {["Restaurant", "Bar & Lounge", "Bedroom Suite", "Reception"][currentSlide]}
@@ -302,8 +266,9 @@ const FEATURES = [
 function FeatureStrip() {
   const [ref, visible] = useInView(0.1);
   return (
-    <div className="feature-strip-wrapper">
-      <div ref={ref} className="feature-strip">
+    <div style={{ background: "var(--sand)" }}>
+      <div ref={ref} className="feature-strip"
+        style={{ margin: "0 80px", marginTop: "-36px", background: "rgba(240,234,224,0.92)", border: "1px solid rgba(139,107,71,0.07)", borderRadius: "6px", padding: "20px 24px", display: "grid", gridTemplateColumns: "repeat(7, 1fr)", boxShadow: "0 1px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(10px)", position: "relative", zIndex: 10 }}>
         {FEATURES.map(({ label, icon }, i) => (
           <motion.div key={label} initial={{ opacity: 0, y: 14 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, delay: i * 0.07 }} whileHover={{ y: -4, transition: { duration: 0.18 } }}
             style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", padding: "4px 10px", cursor: "pointer", borderRight: i < FEATURES.length - 1 ? "1px solid rgba(139,107,71,0.07)" : "none" }}>
@@ -452,7 +417,7 @@ function LanguageSchool() {
             </motion.h2>
             <motion.div initial={{ opacity: 0, y: 16 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}>
               <p style={{ fontSize: "15px", lineHeight: 1.8, color: "var(--text-muted)", marginBottom: "28px" }}>
-                Akrafthaus German Language School brings world-class language education right to Kubwa, Abuja. Whether you're preparing for a career move, academic studies, or simply broadening your horizons — we have a programme for you.
+                Akrafthaus German Language School brings world-class language education right to Abuja. Whether you're preparing for a career move, academic studies, or simply broadening your horizons — we have a programme for you.
               </p>
               <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
                 <Link href="/language-school" className="btn-gold">Enrol Now</Link>
@@ -619,7 +584,7 @@ function Footer() {
               </a>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              {[{ icon: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>, text: "+234 703 386 9555" }, { icon: <><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></>, text: "hello@akrafthaus.ng" }, { icon: <><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></>, text: "Kubwa, Abuja, Nigeria" }].map(({ icon, text }) => (
+              {[{ icon: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.06 6.06l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>, text: "+234 703 386 9555" }, { icon: <><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></>, text: "hello@akrafthaus.ng" }, { icon: <><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></>, text: "Abuja, Nigeria" }].map(({ icon, text }) => (
                 <div key={text} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--warm-brown)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>{icon}</svg>
                   <span style={{ fontSize: "12.5px", color: "var(--text-muted)" }}>{text}</span>
@@ -650,6 +615,9 @@ function WhatsAppButton() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   ROOT — NO <Navbar /> here, it's in layout.tsx
+───────────────────────────────────────────── */
 export default function AkrafthausPage() {
   return (
     <>

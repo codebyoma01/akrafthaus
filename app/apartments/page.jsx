@@ -88,25 +88,19 @@ const useInView = (threshold = 0.1) => {
   return [ref, visible];
 };
 
-/* ─────────────────────────────────────────────
-   DATA
-───────────────────────────────────────────── */
 const UNITS = [
-  { id: 1, name: "The Signature Suite", type: "Suite", beds: 2, baths: 2, sqft: 980, price: 85000, available: true, img: "/apt-1.jpg", description: "A refined two-bedroom suite with floor-to-ceiling windows, a private balcony, and bespoke furnishings.", amenities: ["Balcony", "King Bed", "Smart TV", "Mini Bar", "Kitchenette"] },
-  { id: 2, name: "The Loft Apartment", type: "Loft", beds: 1, baths: 1, sqft: 620, price: 55000, available: true, img: "/apt-2.jpg", description: "An open-plan loft with soaring ceilings and an artist's eye for detail. Perfect for the creative professional.", amenities: ["High Ceilings", "Open Plan", "Smart TV", "Work Desk", "Kitchenette"] },
-  { id: 3, name: "The Garden Terrace", type: "Terrace", beds: 3, baths: 2, sqft: 1200, price: 120000, available: false, img: "/apt-3.jpg", description: "A spacious three-bedroom unit with a private garden terrace, ideal for families.", amenities: ["Private Garden", "3 Bedrooms", "Smart TV", "Full Kitchen", "Parking"] },
-  { id: 4, name: "The Executive Studio", type: "Studio", beds: 1, baths: 1, sqft: 420, price: 38000, available: true, img: "/apt-4.jpg", description: "A compact yet elegantly designed studio unit with premium finishes, ideal for solo travellers.", amenities: ["Queen Bed", "Smart TV", "Work Desk", "Mini Fridge", "Fast WiFi"] },
-  { id: 5, name: "The Penthouse", type: "Penthouse", beds: 4, baths: 3, sqft: 1800, price: 250000, available: true, img: "/apt-5.jpg", description: "The crown jewel of Akrafthaus. A sprawling penthouse with panoramic views and a private rooftop deck.", amenities: ["Rooftop Deck", "4 Bedrooms", "Butler Service", "Full Kitchen", "Jacuzzi"] },
-  { id: 6, name: "The Classic Room", type: "Room", beds: 1, baths: 1, sqft: 350, price: 28000, available: true, img: "/apt-6.jpg", description: "A timeless and comfortable room with warm interiors and access to all Akrafthaus amenities.", amenities: ["Queen Bed", "Smart TV", "Mini Bar", "Fast WiFi", "Room Service"] },
-  { id: 7, name: "The Deluxe Suite", type: "Suite", beds: 2, baths: 2, sqft: 850, price: 72000, available: false, img: "/apt-7.jpg", description: "A generously sized deluxe suite with a separate living area and a luxurious en-suite bathroom.", amenities: ["Soaking Tub", "Living Area", "Smart TV", "Walk-in Wardrobe", "Kitchenette"] },
-  { id: 8, name: "The Creative Flat", type: "Loft", beds: 2, baths: 1, sqft: 710, price: 62000, available: true, img: "/apt-8.jpg", description: "Designed for the modern creative, this flat features a dedicated studio workspace and curated art pieces.", amenities: ["Studio Space", "Art Pieces", "Smart TV", "Work Desk", "Fast WiFi"] },
+  { id: 1, name: "The Signature Suite", type: "Suite", beds: 2, baths: 2, sqft: 980, price: 85000, available: true, img: "/apt-1.jpg", description: "A refined two-bedroom suite with floor-to-ceiling windows, a private balcony, and bespoke furnishings crafted by local artisans.", amenities: ["Balcony", "King Bed", "Smart TV", "Mini Bar", "Kitchenette"] },
+  { id: 2, name: "The Loft", type: "Loft", beds: 1, baths: 1, sqft: 620, price: 55000, available: true, img: "/apt-2.jpg", description: "Soaring ceilings, an open-plan layout, and an artist's eye for detail. Designed for the creative professional who thinks better in good spaces.", amenities: ["High Ceilings", "Open Plan", "Smart TV", "Work Desk", "Kitchenette"] },
+  { id: 3, name: "The Garden Terrace", type: "Terrace", beds: 3, baths: 2, sqft: 1200, price: 120000, available: false, img: "/apt-3.jpg", description: "A spacious three-bedroom unit opening onto a private garden terrace. The kind of space families actually want to spend time in.", amenities: ["Private Garden", "3 Bedrooms", "Smart TV", "Full Kitchen", "Parking"] },
+  { id: 4, name: "The Executive Studio", type: "Studio", beds: 1, baths: 1, sqft: 420, price: 38000, available: true, img: "/apt-4.jpg", description: "Compact, precise, and beautifully finished. Every inch designed for the solo traveller who doesn't want to compromise on quality.", amenities: ["Queen Bed", "Smart TV", "Work Desk", "Mini Fridge", "Fast WiFi"] },
+  { id: 5, name: "The Penthouse", type: "Penthouse", beds: 4, baths: 3, sqft: 1800, price: 250000, available: true, img: "/apt-5.jpg", description: "The crown of Akrafthaus. Panoramic views, a private rooftop deck, butler service, and a level of quiet that money can — and should — buy.", amenities: ["Rooftop Deck", "4 Bedrooms", "Butler Service", "Full Kitchen", "Jacuzzi"] },
+  { id: 6, name: "The Classic", type: "Room", beds: 1, baths: 1, sqft: 350, price: 28000, available: true, img: "/apt-6.jpg", description: "Warm interiors, thoughtful details, and full access to everything Akrafthaus has to offer. The perfect base for whatever brings you to Kubwa.", amenities: ["Queen Bed", "Smart TV", "Mini Bar", "Fast WiFi", "Room Service"] },
+  { id: 7, name: "The Deluxe Suite", type: "Suite", beds: 2, baths: 2, sqft: 850, price: 72000, available: false, img: "/apt-7.jpg", description: "A generous suite with a separate living area and a soaking tub that earns its keep. Ideal for longer stays.", amenities: ["Soaking Tub", "Living Area", "Smart TV", "Walk-in Wardrobe", "Kitchenette"] },
+  { id: 8, name: "The Creative Flat", type: "Loft", beds: 2, baths: 1, sqft: 710, price: 62000, available: true, img: "/apt-8.jpg", description: "Built for makers. A dedicated studio workspace, curated art pieces from Nigerian artists, and a layout that never gets in your way.", amenities: ["Studio Space", "Nigerian Art", "Smart TV", "Work Desk", "Fast WiFi"] },
 ];
 
 const FILTERS = ["All", "Studio", "Room", "Loft", "Suite", "Terrace", "Penthouse"];
 
-/* ─────────────────────────────────────────────
-   BOOKING MODAL
-───────────────────────────────────────────── */
 function BookingModal({ unit, onClose }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", checkin: "", checkout: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -149,9 +143,6 @@ function BookingModal({ unit, onClose }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   UNIT CARD
-───────────────────────────────────────────── */
 function UnitCard({ unit, index, onBook }) {
   const [ref, visible] = useInView(0.08);
   return (
@@ -166,7 +157,7 @@ function UnitCard({ unit, index, onBook }) {
           <span className="serif" style={{ fontSize: "17px", fontWeight: 500, color: "var(--charcoal)" }}>₦{unit.price.toLocaleString()}<span style={{ fontSize: "10px", color: "var(--text-muted)", fontFamily: "'DM Sans',sans-serif", fontWeight: 400 }}>/night</span></span>
         </div>
         <h3 className="serif" style={{ fontSize: "18px", fontWeight: 500, color: "var(--charcoal)", marginBottom: "8px", lineHeight: 1.2 }}>{unit.name}</h3>
-        <div style={{ display: "flex", gap: "14px", marginBottom: "12px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "14px", marginBottom: "10px", flexWrap: "wrap" }}>
           {[{ icon: "🛏", label: `${unit.beds} Bed${unit.beds > 1 ? "s" : ""}` }, { icon: "🚿", label: `${unit.baths} Bath${unit.baths > 1 ? "s" : ""}` }, { icon: "📐", label: `${unit.sqft} sqft` }].map(({ icon, label }) => (
             <span key={label} style={{ fontSize: "12px", color: "var(--text-muted)" }}>{icon} {label}</span>
           ))}
@@ -183,9 +174,6 @@ function UnitCard({ unit, index, onBook }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   HERO
-───────────────────────────────────────────── */
 function ApartmentsHero() {
   return (
     <section className="apt-hero" style={{ position: "relative", width: "100%", height: "400px", overflow: "hidden", display: "flex", alignItems: "center" }}>
@@ -195,24 +183,21 @@ function ApartmentsHero() {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
           style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "18px" }}>
           <span style={{ width: "24px", height: "1px", background: "var(--warm-gold)" }} />
-          <span style={{ fontSize: "10px", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--warm-gold)" }}>Kubwa, Abuja · Nigeria</span>
+          <span style={{ fontSize: "10px", letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--warm-gold)" }}>Est. 2022 · Kubwa, Abuja</span>
         </motion.div>
         <motion.h1 className="serif" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2 }}
           style={{ fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.08, fontWeight: 500, color: "var(--cream)", marginBottom: "14px", letterSpacing: "-0.02em" }}>
-          Luxury Apartments
+          Spaces worth living in
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35 }}
           style={{ fontSize: "15px", color: "rgba(245,240,232,0.7)", maxWidth: "420px", lineHeight: 1.72, fontWeight: 300 }}>
-          From intimate studios to sprawling penthouses — every unit is designed to elevate the way you live.
+          From intimate studios to a rooftop penthouse — every unit at Akrafthaus was designed to feel like somewhere you'd actually choose to be.
         </motion.p>
       </div>
     </section>
   );
 }
 
-/* ─────────────────────────────────────────────
-   ROOT — NO <Navbar /> here, it's in layout.tsx
-───────────────────────────────────────────── */
 export default function ApartmentsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [bookingUnit, setBookingUnit] = useState(null);
@@ -228,8 +213,8 @@ export default function ApartmentsPage() {
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} style={{ marginBottom: "32px" }}>
             <p className="eyebrow" style={{ marginBottom: "8px" }}>Our Units</p>
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "16px" }}>
-              <h2 className="serif" style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, color: "var(--charcoal)", lineHeight: 1.1 }}>Find Your Perfect Space</h2>
-              <span style={{ fontSize: "13px", color: "var(--text-muted)" }}>{filtered.length} unit{filtered.length !== 1 ? "s" : ""} available</span>
+              <h2 className="serif" style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, color: "var(--charcoal)", lineHeight: 1.1 }}>Find your space</h2>
+              <span style={{ fontSize: "13px", color: "var(--text-muted)" }}>{filtered.length} unit{filtered.length !== 1 ? "s" : ""} shown</span>
             </div>
           </motion.div>
 
@@ -258,7 +243,7 @@ export default function ApartmentsPage() {
 
       <div style={{ background: "var(--cream)", borderTop: "1px solid rgba(139,107,71,0.12)", padding: "20px 24px", textAlign: "center" }}>
         <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>
-          © 2026 Akrafthaus. All rights reserved. ·{" "}
+          © 2026 Akrafthaus. All rights reserved. · Built in Kubwa, Abuja ·{" "}
           <Link href="/" style={{ color: "var(--warm-brown)", textDecoration: "none" }}>Back to Home</Link>
         </span>
       </div>

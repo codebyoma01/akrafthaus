@@ -11,19 +11,19 @@ const FontLoader = () => (
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #F5F0E8; --charcoal: #1C1A17; --warm-gold: #C9A96E;
-      --warm-brown: #8B6B47; --sand: #F0EAE0; --text-muted: #7A6E64;
+      --cream: #F5F0E8; --charcoal: #1C1A17; --warm-gold: #C9590A;
+      --orange-dark: #A8470A; --sand: #F0EAE0; --text-muted: #7A6E64;
     }
 
     html { scroll-behavior: smooth; }
     body { background: var(--sand); color: var(--charcoal); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     .serif { font-family: 'Playfair Display', Georgia, serif; }
-    .eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--warm-brown); font-weight: 400; }
+    .eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--orange); font-weight: 400; }
 
-    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--warm-brown); color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: opacity 0.25s; white-space: nowrap; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--orange); color: var(--cream); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: opacity 0.25s; white-space: nowrap; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
     .btn-gold:hover { opacity: 0.82; }
-    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border: 1px solid var(--warm-brown); color: var(--warm-brown); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: none; transition: background 0.25s, color 0.25s; white-space: nowrap; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-    .btn-outline:hover { background: var(--warm-brown); color: var(--cream); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border: 1px solid var(--orange); color: var(--orange); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: none; transition: background 0.25s, color 0.25s; white-space: nowrap; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .btn-outline:hover { background: var(--orange); color: var(--cream); }
 
     .room-card { background: #fff; overflow: hidden; border: 1px solid rgba(139,107,71,0.08); transition: box-shadow 0.3s ease, transform 0.3s ease; }
     .room-card:hover { box-shadow: 0 12px 40px rgba(139,107,71,0.12); transform: translateY(-4px); }
@@ -36,18 +36,18 @@ const FontLoader = () => (
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
     .form-input { padding: 12px 14px; border: 1px solid rgba(139,107,71,0.2); background: #fff; font-size: 13px; color: var(--charcoal); font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; border-radius: 2px; width: 100%; }
-    .form-input:focus { border-color: var(--warm-brown); }
+    .form-input:focus { border-color: var(--orange); }
     .form-select { padding: 12px 14px; border: 1px solid rgba(139,107,71,0.2); background: #fff; font-size: 13px; color: var(--charcoal); font-family: 'DM Sans', sans-serif; outline: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B6B47' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; transition: border-color 0.2s; border-radius: 2px; width: 100%; }
-    .form-select:focus { border-color: var(--warm-brown); }
+    .form-select:focus { border-color: var(--orange); }
 
     .gal-item { overflow: hidden; cursor: pointer; border-radius: 4px; }
     .gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
     .gal-item:hover img { transform: scale(1.06); }
 
     .footer-link { color: var(--text-muted); font-size: 12.5px; text-decoration: none; line-height: 2; display: block; transition: color 0.2s; }
-    .footer-link:hover { color: var(--warm-brown); }
+    .footer-link:hover { color: var(--orange); }
     .social-icon-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(139,107,71,0.25); display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-decoration: none; transition: all 0.2s; flex-shrink: 0; }
-    .social-icon-btn:hover { border-color: var(--warm-brown); color: var(--warm-brown); }
+    .social-icon-btn:hover { border-color: var(--orange); color: var(--orange); }
 
     .whatsapp-btn { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s ease; }
     .whatsapp-btn:hover { transform: scale(1.1); }
@@ -153,20 +153,20 @@ function HotelHero() {
       <div className="hotel-hero-content" style={{ position: "relative", zIndex: 2, height: "100%", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 72px", maxWidth: "760px", paddingTop: "72px" }}>
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
           style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "22px" }}>
-          <span style={{ width: "26px", height: "1px", background: "var(--warm-gold)" }} />
-          <span style={{ fontSize: "10px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--warm-gold)" }}>Boutique Hotel · Kubwa, Abuja</span>
+          <span style={{ width: "26px", height: "1px", background: "var(--orange)" }} />
+          <span style={{ fontSize: "10px", letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--orange)" }}>Boutique Hotel · Kubwa, Abuja · Est. 2022</span>
         </motion.div>
         <motion.h1 className="serif" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           style={{ fontSize: "clamp(40px, 7vw, 88px)", lineHeight: 1.05, fontWeight: 500, color: "var(--cream)", marginBottom: "20px", letterSpacing: "-0.02em" }}>
-          Rest in<br />Refined<br />Luxury
+          42 rooms.<br />Zero<br />cookie-cutter.
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.38 }}
           style={{ fontSize: "15px", lineHeight: 1.78, color: "rgba(245,240,232,0.72)", maxWidth: "420px", marginBottom: "40px", fontWeight: 300 }}>
-          42 uniquely designed rooms and suites, each crafted to deliver an experience that blends warmth, elegance, and genuine Nigerian hospitality.
+          Every room at Akrafthaus was built to feel like somewhere you'd choose to live, not just pass through. Local artisans, Nigerian art on the walls, and a warmth that no interior designer can manufacture.
         </motion.p>
         <motion.div className="hero-cta-row" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }}
           style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="#booking" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", background: "var(--warm-brown)", color: "#fff", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "opacity 0.25s" }}
+          <a href="#booking" style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "15px 28px", background: "var(--orange)", color: "#fff", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "opacity 0.25s" }}
             onMouseEnter={e => (e.currentTarget.style.opacity = "0.82")} onMouseLeave={e => (e.currentTarget.style.opacity = "1")}>
             Reserve a Room
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -178,9 +178,9 @@ function HotelHero() {
         </motion.div>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.75 }}
           style={{ display: "flex", gap: "36px", marginTop: "52px", paddingTop: "32px", borderTop: "1px solid rgba(245,240,232,0.15)", flexWrap: "wrap" }}>
-          {[["42", "Unique Rooms"], ["5★", "Rated Hotel"], ["24/7", "Concierge"], ["₦50k", "From / Night"]].map(([num, label]) => (
+          {[["4", "Named Rooms"], ["Nigerian", "Art on Every Wall"], ["24/7", "Concierge"], ["₦50k", "From / Night"]].map(([num, label]) => (
             <div key={label}>
-              <div className="serif" style={{ fontSize: "20px", fontWeight: 500, color: "var(--warm-gold)", lineHeight: 1 }}>{num}</div>
+              <div className="serif" style={{ fontSize: "20px", fontWeight: 500, color: "var(--orange)", lineHeight: 1 }}>{num}</div>
               <div style={{ fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(245,240,232,0.5)", marginTop: "5px" }}>{label}</div>
             </div>
           ))}
@@ -189,7 +189,7 @@ function HotelHero() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
         style={{ position: "absolute", bottom: "40px", left: "72px", zIndex: 3, display: "flex", alignItems: "center", gap: "10px" }}>
         <div style={{ width: "1px", height: "44px", background: "rgba(245,240,232,0.2)", position: "relative", overflow: "hidden" }}>
-          <motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "50%", background: "var(--warm-gold)" }}
+          <motion.div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "50%", background: "var(--orange)" }}
             animate={{ y: ["0%", "200%"] }} transition={{ duration: 1.4, repeat: Infinity, ease: "linear" }} />
         </div>
         <span style={{ fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,240,232,0.38)" }}>Scroll</span>
@@ -202,10 +202,10 @@ function HotelHero() {
    ROOMS
 ───────────────────────────────────────────── */
 const ROOMS = [
-  { type: "Standard Room", price: "₦50,000", size: "28 sqm", guests: "2 Guests", img: "/room-standard.jpg", features: ["King Bed", "City View", "Free WiFi", "Air Conditioning", "Smart TV", "En-suite Bathroom"], badge: null },
-  { type: "Deluxe Room", price: "₦70,000", size: "36 sqm", guests: "2 Guests", img: "/room-deluxe.jpg", features: ["King Bed", "Garden View", "Free WiFi", "Mini Bar", "Smart TV", "Rain Shower"], badge: "Most Popular" },
-  { type: "Suite", price: "₦85,000", size: "52 sqm", guests: "2–3 Guests", img: "/room-suite.jpg", features: ["King Bed", "Sitting Area", "Panoramic View", "Mini Bar", "Jacuzzi", "Butler Service"], badge: null },
-  { type: "Presidential Suite", price: "₦100,000", size: "90 sqm", guests: "4 Guests", img: "/room-presidential.jpg", features: ["2 King Beds", "Private Lounge", "Panoramic View", "Full Kitchen", "Private Jacuzzi", "24/7 Butler"], badge: "Premium" },
+  { type: "The Kraft Room", price: "₦50,000", size: "28 sqm", guests: "2 Guests", img: "/room-standard.jpg", desc: "Our entry point — but don't mistake that for ordinary. Every detail was chosen deliberately: the lighting, the linen thread count, the view.", features: ["King Bed", "City View", "Free WiFi", "Air Conditioning", "Smart TV", "En-suite Bathroom"], badge: null },
+  { type: "The Wuse", price: "₦70,000", size: "36 sqm", guests: "2 Guests", img: "/room-deluxe.jpg", desc: "Named after Abuja's most energetic district. A bigger canvas, a rain shower, and a mini bar stocked with local favourites.", features: ["King Bed", "Garden View", "Free WiFi", "Mini Bar", "Smart TV", "Rain Shower"], badge: "Most Popular" },
+  { type: "The Maitama Suite", price: "₦85,000", size: "52 sqm", guests: "2–3 Guests", img: "/room-suite.jpg", desc: "A proper suite for when you need space to think, meet, or simply exhale. Separate sitting area, panoramic views, full butler service.", features: ["King Bed", "Sitting Area", "Panoramic View", "Mini Bar", "Jacuzzi", "Butler Service"], badge: null },
+  { type: "The Founder's Floor", price: "₦100,000", size: "90 sqm", guests: "4 Guests", img: "/room-presidential.jpg", desc: "The room we saved for people who don't compromise. Private lounge, full kitchen, rooftop access, and a level of quiet that money can buy.", features: ["2 King Beds", "Private Lounge", "Panoramic View", "Full Kitchen", "Private Jacuzzi", "24/7 Butler"], badge: "Signature" },
 ];
 
 function Rooms() {
@@ -216,31 +216,32 @@ function Rooms() {
         <motion.div initial={{ opacity: 0, y: 18 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} style={{ marginBottom: "48px" }}>
           <p className="eyebrow" style={{ marginBottom: "14px" }}>Accommodation</p>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "16px" }}>
-            <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 48px)", lineHeight: 1.1, fontWeight: 500, color: "var(--charcoal)" }}>Our Rooms & Suites</h2>
-            <p style={{ fontSize: "14px", lineHeight: 1.75, color: "var(--text-muted)", maxWidth: "340px" }}>Every room is a carefully considered sanctuary blending local craft, premium comfort, and timeless design.</p>
+            <h2 className="serif" style={{ fontSize: "clamp(26px, 3.5vw, 48px)", lineHeight: 1.1, fontWeight: 500, color: "var(--charcoal)" }}>Choose your room</h2>
+            <p style={{ fontSize: "14px", lineHeight: 1.75, color: "var(--text-muted)", maxWidth: "340px" }}>Four rooms. Each named, each different. All built with the same obsessive attention to what actually makes a stay feel good.</p>
           </div>
         </motion.div>
         <div className="rooms-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
-          {ROOMS.map(({ type, price, size, guests, img, features, badge }, i) => (
+          {ROOMS.map(({ type, price, size, guests, img, features, badge, desc }, i) => (
             <motion.div key={type} className="room-card" initial={{ opacity: 0, y: 24 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: i * 0.1 }}>
               <div style={{ position: "relative", overflow: "hidden" }}>
                 <img src={img} alt={type} className="room-card-img" />
-                {badge && <div style={{ position: "absolute", top: "14px", left: "14px", background: "var(--warm-brown)", color: "#fff", fontSize: "9px", letterSpacing: "0.16em", textTransform: "uppercase", padding: "5px 12px" }}>{badge}</div>}
+                {badge && <div style={{ position: "absolute", top: "14px", left: "14px", background: "var(--orange)", color: "#fff", fontSize: "9px", letterSpacing: "0.16em", textTransform: "uppercase", padding: "5px 12px" }}>{badge}</div>}
                 <div style={{ position: "absolute", bottom: "14px", right: "14px", background: "rgba(15,10,5,0.75)", backdropFilter: "blur(8px)", padding: "7px 14px" }}>
-                  <span className="serif" style={{ fontSize: "17px", fontWeight: 500, color: "var(--warm-gold)" }}>{price}</span>
+                  <span className="serif" style={{ fontSize: "17px", fontWeight: 500, color: "var(--orange)" }}>{price}</span>
                   <span style={{ fontSize: "10px", color: "rgba(245,240,232,0.6)", marginLeft: "4px" }}>/night</span>
                 </div>
               </div>
               <div style={{ padding: "24px" }}>
                 <h3 className="serif" style={{ fontSize: "19px", fontWeight: 500, color: "var(--charcoal)", marginBottom: "6px" }}>{type}</h3>
-                <div style={{ display: "flex", gap: "14px", marginBottom: "14px" }}>
+                <div style={{ display: "flex", gap: "14px", marginBottom: "10px" }}>
                   <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>📐 {size}</span>
                   <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>👤 {guests}</span>
                 </div>
+                <p style={{ fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.7, marginBottom: "14px" }}>{desc}</p>
                 <div className="room-features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "7px", marginBottom: "20px" }}>
                   {features.map(f => (
                     <div key={f} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-                      <span style={{ color: "var(--warm-gold)", fontSize: "9px" }}>✦</span>
+                      <span style={{ color: "var(--orange)", fontSize: "9px" }}>✦</span>
                       <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>{f}</span>
                     </div>
                   ))}
@@ -285,7 +286,7 @@ function Amenities() {
         <div className="amenities-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "14px" }}>
           {AMENITIES.map(({ icon, label }, i) => (
             <motion.div key={label} className="amenity-item" initial={{ opacity: 0, y: 18 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.07 }}>
-              <div style={{ color: "var(--warm-brown)", lineHeight: 0 }}>{icon}</div>
+              <div style={{ color: "var(--orange)", lineHeight: 0 }}>{icon}</div>
               <span style={{ fontSize: "12px", fontWeight: 500, color: "var(--charcoal)" }}>{label}</span>
             </motion.div>
           ))}
@@ -318,7 +319,7 @@ function BookingForm() {
             {submitted ? (
               <motion.div key="success" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} style={{ textAlign: "center", padding: "32px 0" }}>
                 <div style={{ width: "60px", height: "60px", borderRadius: "50%", background: "rgba(139,107,71,0.1)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--warm-brown)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <h3 className="serif" style={{ fontSize: "24px", fontWeight: 500, color: "var(--charcoal)", marginBottom: "10px" }}>Reservation Received</h3>
                 <p style={{ fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.8, maxWidth: "340px", margin: "0 auto 24px" }}>
@@ -356,7 +357,7 @@ function BookingForm() {
                 </div>
                 <div className="booking-submit-row" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "14px" }}>
                   <p style={{ fontSize: "11px", color: "var(--text-muted)", lineHeight: 1.6 }}>
-                    By submitting, you agree to our <a href="#" style={{ color: "var(--warm-brown)", textDecoration: "underline" }}>booking policy</a>.
+                    By submitting, you agree to our <a href="#" style={{ color: "var(--orange)", textDecoration: "underline" }}>booking policy</a>.
                   </p>
                   <button className="btn-gold" style={{ fontSize: "10px" }} onClick={() => { if (formData.name && formData.email && formData.checkIn && formData.checkOut && formData.roomType) setSubmitted(true); }}>
                     Submit Reservation
