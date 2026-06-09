@@ -1,4 +1,4 @@
-export { HERO_IMAGES, HERO_CROSSFADE_MS } from "./hero-images";
+export { HERO_IMAGE, HERO_CROSSFADE_MS } from "./hero-images";
 export { default as HomePage } from "./HomePage";
 export { default as HomePhoto } from "./HomePhoto";
 export { default as OpeningHero } from "./OpeningHero";
